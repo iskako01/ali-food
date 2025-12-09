@@ -5,11 +5,15 @@ export const metadata: Metadata = {
   description: "Blog post description",
 };
 
-export default function BlogPostPage({ params }) {
+export default async function BlogPostPage(props) {
+  const { slug } = await props.params;
+
+  console.log({ slug });
+
   return (
     <main>
       <h1>Blog post</h1>
-      <p>{params.slug}</p>
+      <p>{slug}</p>
     </main>
   );
 }
