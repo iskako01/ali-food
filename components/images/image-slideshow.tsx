@@ -27,7 +27,7 @@ export default function ImageSlideshow({ images }: PropsInterface) {
         <Image
           src={image.src}
           alt={image.alt}
-          key={image.alt}
+          key={index}
           className={index === currentImageIndex ? classes.active : ""}
         />
       ))}

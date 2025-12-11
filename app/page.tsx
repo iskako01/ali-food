@@ -1,4 +1,4 @@
-import HomepageSlideshow from "@/components/homepage-slideshow";
+import HomepageSlideshow from "@/components/homepage-slideshow/homepage-slideshow";
 import classes from "./page.module.css";
 
 export default function Home() {
