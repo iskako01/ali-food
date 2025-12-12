@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import classes from "./image-slideshow.module.css";
 import Image from "next/image";
-import type { StaticImageInterface } from "@/interfaces/image";
+import type { IStaticImage } from "@/interfaces/image";
 
 interface PropsInterface {
-  images: StaticImageInterface[];
+  images: IStaticImage[];
 }
 
 export default function ImageSlideshow({ images }: PropsInterface) {

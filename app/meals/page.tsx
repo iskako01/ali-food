@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import classes from "./page.module.css";
+import MealsGrid from "@/components/meals/meals-grid";
 
 export const metadata: Metadata = {
   title: "MealsPagee",
@@ -8,17 +10,21 @@ export const metadata: Metadata = {
 
 export default function MealsPage() {
   return (
-    <main>
-      <h1>MealsPage</h1>
-      <p>
-        <Link href="/meals/meal-1">meal-1</Link>
-      </p>
-      <p>
-        <Link href="/meals/meal-2">meal-1</Link>
-      </p>
-      <p>
-        <Link href="/meals/meal-3">meal-1</Link>
-      </p>
+    <main className={classes.main}>
+      <div className={classes.title}>
+        <h1>Delicios meals, created{"..."}</h1>
+        <span className={classes.highlight}>by you</span>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
+          aspernatur?
+        </p>
+        <p className={classes.cta}>
+          <Link href="/meals/share">Share Your Favorite Recipe</Link>
+        </p>
+      </div>
+
+      <MealsGrid meals={[]} />
     </main>
   );
 }
