@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import classes from "./page.module.css";
-import MealsGrid from "@/components/meals/meals-grid";
-import { getMeals } from "@/lib/meals";
+import SuspenseLoading from "@/components/common/suspense-loading";
+import Meals from "@/components/meals/meals";
 
 export const metadata: Metadata = {
   title: "MealsPagee",
@@ -10,8 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default async function MealsPage() {
-  const meals = await getMeals();
-
   return (
     <main className={classes.main}>
       <div className={classes.title}>
@@ -27,7 +25,9 @@ export default async function MealsPage() {
         </p>
       </div>
 
-      <MealsGrid meals={meals} />
+      <SuspenseLoading>
+        <Meals />
+      </SuspenseLoading>
     </main>
   );
 }
