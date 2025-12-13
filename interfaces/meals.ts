@@ -1,10 +1,12 @@
 import { IImage } from "./image";
 
 export interface IMeal {
-  id: string;
-  title: string;
-  image: IImage;
-  summary: string;
-  creator: string;
+  id: number;
   url: string;
+  image: IImage | null;
+  title: string;
+  summary: string;
+  instructions: string;
+  creator: string;
+  creator_email: string;
 }
