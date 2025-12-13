@@ -20,6 +20,8 @@ type MealImage = {
 
 export async function getMeals() {
   await new Promise((resolve) => setTimeout(resolve, 1000));
+  // throw new Error("Loading meals failed");
+
   const mealsData = db.prepare("SELECT * FROM meals").all() as MealRow[];
 
   const parsedMeals = mealsData.map((meal) => ({
@@ -28,4 +30,23 @@ export async function getMeals() {
   }));
 
   return parsedMeals;
+}
+
+export function getMeal(url: string) {
+  if (!url) {
+    return null;
+  }
+
+  const mealData = db
+    .prepare("SELECT * FROM meals WHERE url = ?")
+    .get(url) as MealRow;
+
+  if (!mealData) {
+    throw new Error(`Meal not found for url: ${url}`);
+  }
+
+  return {
+    ...mealData,
+    image: JSON.parse(mealData.image),
+  };
 }

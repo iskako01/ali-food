@@ -10,7 +10,9 @@ export default function SuspenseLoading({
   children,
   fallback,
 }: PropsInterface) {
-  const defaultFallback = <p className={classes.loading}>Fetchng...</p>;
+  const defaultFallback = (
+    <p className={classes["suspense-loading"]}>Fetchng...</p>
+  );
 
   return <Suspense fallback={fallback || defaultFallback}>{children}</Suspense>;
 }

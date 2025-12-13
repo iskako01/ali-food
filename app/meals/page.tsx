@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "MealsPage description",
 };
 
-export default async function MealsPage() {
+export default function MealsPage() {
   return (
     <main className={classes.main}>
       <div className={classes.title}>

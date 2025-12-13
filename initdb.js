@@ -5,7 +5,7 @@ const db = sql("meals.db");
 const dummyMeals = [
   {
     title: "Juicy Cheese Burger",
-    url: "/juicy-cheese-burger",
+    url: "juicy-cheese-burger",
     image: {
       src: "/images/burger.jpg",
       alt: "Juicy Cheese Burger",
@@ -30,7 +30,7 @@ const dummyMeals = [
   },
   {
     title: "Spicy Curry",
-    url: "/spicy-curry",
+    url: "spicy-curry",
     image: {
       src: "/images/curry.jpg",
       alt: "Spicy Curry",
@@ -58,7 +58,7 @@ const dummyMeals = [
   },
   {
     title: "Homemade Dumplings",
-    url: "/homemade-dumplings",
+    url: "homemade-dumplings",
     image: {
       src: "/images/dumplings.jpg",
       alt: "Homemade Dumplings",
@@ -83,7 +83,7 @@ const dummyMeals = [
   },
   {
     title: "Classic Mac n Cheese",
-    url: "/classic-mac-n-cheese",
+    url: "classic-mac-n-cheese",
     image: {
       src: "/images/macncheese.jpg",
       alt: "Classic Mac n Cheese",
@@ -111,7 +111,7 @@ const dummyMeals = [
   },
   {
     title: "Authentic Pizza",
-    url: "/authentic-pizza",
+    url: "authentic-pizza",
     image: {
       src: "/images/pizza.jpg",
       alt: "Authentic Pizza",
@@ -136,7 +136,7 @@ const dummyMeals = [
   },
   {
     title: "Wiener Schnitzel",
-    url: "/wiener-schnitzel",
+    url: "wiener-schnitzel",
     image: {
       src: "/images/schnitzel.jpg",
       alt: "Wiener Schnitzel",
@@ -161,7 +161,7 @@ const dummyMeals = [
   },
   {
     title: "Fresh Tomato Salad",
-    url: "/fresh-tomato-salad",
+    url: "fresh-tomato-salad",
     image: {
       src: "/images/tomato.jpg",
       alt: "Fresh Tomato Salad",
@@ -225,7 +225,7 @@ async function initData() {
   for (const meal of dummyMeals) {
     stmt.run({
       ...meal,
-      image: JSON.stringify(meal.image), // 👈 FIX
+      image: JSON.stringify(meal.image), 
     });
   }
 }
