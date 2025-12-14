@@ -1,4 +1,5 @@
 import sql from "better-sqlite3";
+import { notFound } from "next/navigation";
 
 const db = sql("meals.db");
 
@@ -42,7 +43,7 @@ export function getMeal(url: string) {
     .get(url) as MealRow;
 
   if (!mealData) {
-    throw new Error(`Meal not found for url: ${url}`);
+    notFound();
   }
 
   return {

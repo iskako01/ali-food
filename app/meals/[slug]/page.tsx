@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import classes from "./page.module.css";
 import Image from "next/image";
 import { getMeal } from "@/lib/meals";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "MealDetailsPage",
@@ -17,6 +18,10 @@ interface PropsInterface {
 export default async function MealDetailsPage(props: PropsInterface) {
   const { slug } = await props.params;
   const meal = getMeal(slug || "");
+
+  if (!meal) {
+    notFound();
+  }
 
   return (
     <main>
