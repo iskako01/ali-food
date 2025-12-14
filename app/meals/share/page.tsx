@@ -17,8 +17,6 @@ export default function ShareMealPage() {
         alt: formData.get("title") || "",
       },
     };
-
-    console.log(meal);
   }
 
   return (
