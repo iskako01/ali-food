@@ -15,11 +15,11 @@ export default function ImageSlideshow({ images }: PropsInterface) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev < images.length ? prev + 1 : 0));
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className={classes.slideshow}>
