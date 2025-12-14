@@ -32,8 +32,6 @@ export default function ImagePicker({ label, name }: PropsInterface) {
     };
 
     fileReader.readAsDataURL(file);
-
-    console.log(fileReader);
   }
 
   return (
