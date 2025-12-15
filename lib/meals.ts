@@ -4,6 +4,7 @@ import sql from "better-sqlite3";
 import slugify from "slugify";
 import xss from "xss";
 import { notFound } from "next/navigation";
+import { IMeal } from "@/interfaces/meals";
 
 const db = sql("meals.db");
 
@@ -56,15 +57,15 @@ export function getMeal(url: string) {
   };
 }
 
-export async function saveMeal(meal: MealRow) {
+export async function saveMeal(meal: IMeal) {
   meal.url = slugify(meal.title, { lower: true });
   meal.instructions = xss(meal.instructions);
 
-  const extention = meal.image.src.name.split(".").pop();
+  const extention = meal.image.name.split(".").pop();
   const imageFileName = `${meal.url}.${extention}`;
 
   const stream = fs.createWriteStream(`public/images/${imageFileName}`);
-  const bufferedImage = await meal.image.src.arrayBuffer();
+  const bufferedImage = await meal.image.arrayBuffer();
 
   stream.write(Buffer.from(bufferedImage), (error) => {
     if (error) {
@@ -74,7 +75,7 @@ export async function saveMeal(meal: MealRow) {
 
   meal.image = JSON.stringify({
     src: `/images/${imageFileName}`,
-    alt: meal.image.alt,
+    alt: meal.title,
   });
 
   db.prepare(

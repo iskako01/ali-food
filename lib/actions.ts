@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { saveMeal } from "./meals";
+import { IMeal } from "@/interfaces/meals";
 
 export async function shareMeal(formData: FormData) {
   const meal = {
@@ -10,11 +11,8 @@ export async function shareMeal(formData: FormData) {
     instructions: formData.get("instructions") || "",
     creator: formData.get("name") || "",
     creator_email: formData.get("email") || "",
-    image: {
-      src: formData.get("image"),
-      alt: formData.get("title") || "",
-    },
-  };
+    image: formData.get("image"),
+  } as IMeal;
 
   await saveMeal(meal);
 
