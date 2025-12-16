@@ -3,7 +3,7 @@ import { IImage } from "./image";
 export interface IMeal {
   id: number;
   url: string;
-  image: IImage | string | null;
+  image: IImage | null;
   title: string;
   summary: string;
   instructions: string;

@@ -7,7 +7,11 @@ export const metadata = {
   description: "Delicious meals, shared by a food-loving community.",
 };
 
-export default function RootLayout({ children }) {
+interface PropsInterface {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: PropsInterface) {
   return (
     <html lang="en">
       <body>

@@ -9,7 +9,7 @@ interface PropsInterface {
 
 export default function MealItem({ meal }: PropsInterface) {
   return (
-    <article className={classes["meal-item"]}>
+    <article className={classes.mealItem}>
       <div className={classes.image}>
         {meal.image && (
           <Image src={meal.image.src} alt={meal.image.alt ?? meal.title} fill />

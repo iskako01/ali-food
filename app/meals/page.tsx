@@ -5,8 +5,8 @@ import SuspenseLoading from "@/components/common/suspense-loading";
 import Meals from "@/components/meals/meals";
 
 export const metadata: Metadata = {
-  title: "MealsPagee",
-  description: "MealsPage description",
+  title: "All Meals",
+  description: "Browse all meals added by our users.",
 };
 
 export default function MealsPage() {

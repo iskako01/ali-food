@@ -163,7 +163,7 @@ const dummyMeals = [
     title: "Fresh Tomato Salad",
     url: "fresh-tomato-salad",
     image: {
-      src: "/images/tomato.jpg",
+      src: "/images/tomato-salad.jpg",
       alt: "Fresh Tomato Salad",
     },
     summary:

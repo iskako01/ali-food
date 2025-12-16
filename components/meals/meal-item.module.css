@@ -1,4 +1,4 @@
-.meal-item {
+.mealItem {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,8 +27,8 @@
   font-style: italic;
 }
 
-.meal-item h2,
-.meal-item p {
+.mealItem h2,
+.mealItem p {
   margin: 0;
 }
 
@@ -37,7 +37,7 @@
   height: 15rem;
 }
 
-.meal-item img {
+.mealItem img {
   object-fit: cover;
 }
 
